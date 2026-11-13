@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#160f19">
+<title>The Day I Prayed For You 💗</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;min-height:100%;background:#130e19;color:#fff0e9;font-family:Georgia,serif}
+body{min-height:100svh;overflow:hidden}
+#sky{position:fixed;inset:0;pointer-events:none;z-index:0}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;box-shadow:0 0 9px #fff;animation:twinkle 3s infinite alternate}
+@keyframes twinkle{to{opacity:.12;transform:scale(2)}}
+.scene{
+ position:fixed;inset:0;z-index:1;display:none;
+ overflow-x:hidden;overflow-y:auto;
+ -webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+ align-items:center;justify-content:flex-start;flex-direction:column;
+ text-align:center;
+ padding:clamp(28px,7vh,65px) 22px calc(76px + env(safe-area-inset-bottom));
+ background:radial-gradient(ellipse at 50% 35%,#633b51 0%,#291827 55%,#100d17 100%);
+}
+.scene.active{display:flex;animation:appear .8s ease}
+.scene>*{flex-shrink:0}
+@keyframes appear{from{opacity:0;transform:scale(1.015)}to{opacity:1;transform:scale(1)}}
+.k{font:10px Arial,sans-serif;letter-spacing:4px;color:#e9c98e;text-transform:uppercase;margin:0 0 18px}
+h1{font-size:clamp(35px,9.5vw,57px);line-height:1.15;font-weight:normal;color:#ffe6ee;margin:12px 0}
+h2{font-weight:normal;color:#f8d6e5}
+p{width:100%;max-width:440px;font-size:16px;line-height:1.85;color:#f0dce5;margin:12px auto}
+.gold{color:#e9c98e}
+.muted{color:#d5b5c5;font-size:13px}
+button{font-family:inherit;cursor:pointer;touch-action:manipulation}
+.next{flex-shrink:0;margin:24px 0 10px;padding:15px 24px;border:1px solid #e6bdcf;border-radius:40px;background:#fff1e810;color:#ffe4ed;letter-spacing:2px;font-size:10px}
+.next:active{transform:scale(.97);background:#fff2e829}
+.line{width:55px;height:1px;background:#e9c98e;margin:20px auto}
+.flower{font-size:60px;filter:drop-shadow(0 0 18px #e9a9c6);margin:18px}
+.envelope{position:relative;width:230px;height:150px;flex:none;margin:28px auto;background:#f4d7df;box-shadow:0 0 45px #e6a6c666}
+.envelope:before{content:"";position:absolute;inset:0;background:#e9b9ca;clip-path:polygon(0 0,50% 58%,100% 0)}
+.envelope:after{content:"";position:absolute;inset:0;background:#f7e1e6;clip-path:polygon(0 100%,50% 48%,100% 100%)}
+.seal{position:absolute;z-index:2;left:calc(50% - 17px);top:57px;width:34px;height:34px;border-radius:50%;background:#b75e80;color:white;display:grid;place-items:center}
+.glow{width:115px;height:115px;flex:none;border-radius:50%;background:radial-gradient(circle at 35% 30%,white,#f4c9dc 30%,#bd729d 67%,#5c3459);box-shadow:0 0 45px #e9a7ca,0 0 90px #b76caa55;margin:22px}
+.card{width:min(340px,95%);padding:22px 18px;border:1px solid #d8a8bc66;background:#fff5f208;border-radius:15px;margin:8px 0;flex:none;animation:rise .8s both}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.word{font-size:clamp(25px,7vw,40px);color:#f5c7da;letter-spacing:2px}
+.house{position:relative;width:250px;height:180px;flex:none;margin:25px auto}
+.roof{position:absolute;top:0;left:20px;border-left:105px solid transparent;border-right:105px solid transparent;border-bottom:75px solid #d7a5b9}
+.walls{position:absolute;top:72px;left:43px;width:164px;height:108px;background:linear-gradient(140deg,#ffe8df,#d6a1b7)}
+.win{position:absolute;top:24px;left:19px;width:36px;height:39px;background:#fff2c8;box-shadow:0 0 20px #fff1bd}
+.win.two{left:108px}
+.door{position:absolute;bottom:0;left:68px;width:35px;height:68px;background:#895a70;border-radius:18px 18px 0 0}
+#letter{width:min(450px,100%);padding:23px 20px;background:linear-gradient(145deg,#fff1e8,#f3d4dc);color:#704658;text-align:left;box-shadow:0 15px 50px #0005;flex:none}
+#letter h2{color:#9a5573;text-align:center;margin-top:0}
+#letter p{color:#704658;font-size:14px;line-height:1.85}
+.sig{text-align:right!important;font-style:italic;color:#9a5573!important}
+#progress{position:fixed;z-index:5;bottom:0;left:0;width:100%;padding:10px 6px calc(10px + env(safe-area-inset-bottom));text-align:center;font:9px Arial,sans-serif;letter-spacing:2px;color:#e0b5ca;background:linear-gradient(transparent,#160f19dd);pointer-events:none}
+</style>
+</head>
+<body>
+<div id="sky" aria-hidden="true"></div>
+<div id="progress">A STORY WRITTEN WITH LOVE · 01 / 08</div>
+
+<section class="scene active" id="s0">
+<div class="k">A letter that took a lifetime to write</div>
+<div class="flower">✿</div>
+<h1>My Dearest<br><span class="gold">Sarauniya.</span></h1>
+<p>Tonight, I don't want to just tell you that I love you.</p>
+<p>I want to take you somewhere. Somewhere made entirely of the things my heart has been trying to tell you.</p>
+<div class="envelope"><div class="seal">M</div></div>
+<p class="muted">A little letter, just for you.</p>
+<button class="next" onclick="go(1)">OPEN MY HEART ✧</button>
+</section>
+
+<section class="scene" id="s1">
+<div class="k">Chapter one · A beautiful coincidence</div>
+<div class="glow"></div>
+<h1>Out of all the people<br>in this world...</h1>
+<p>Allah allowed our paths to cross.</p>
+<p>And somewhere between the conversations, the laughter, the little moments and the things we cannot explain, you became someone I never want to take for granted.</p>
+<div class="line"></div>
+<p class="gold">You became my favourite person to pray for.</p>
+<button class="next" onclick="go(2)">WHAT I ADMIRE ✧</button>
+</section>
+
+<section class="scene" id="s2">
+<div class="k">Chapter two · What I see in you</div>
+<h1>Five beautiful things.</h1>
+<p>Things I hope you never stop seeing in yourself.</p>
+<div class="card"><div class="word">YOUR HEART</div><p>Your kindness, your softness, and the way you care.</p></div>
+<div class="card"><div class="word">YOUR STRENGTH</div><p>Even on days when you don't feel strong, you keep going.</p></div>
+<div class="card"><div class="word">YOUR MIND</div><p>Your thoughts, your dreams, and the person you're becoming.</p></div>
+<div class="card"><div class="word">YOUR FAITH</div><p>The beauty of wanting Allah at the centre of your life.</p></div>
+<div class="card"><div class="word">YOUR LOVE</div><p>The little ways you make me feel seen, supported and cared for.</p></div>
+<button class="next" onclick="go(3)">SOMETHING YOU MAY NOT SEE ✧</button>
+</section>
+
+<section class="scene" id="s3">
+<div class="k">Chapter three · Behind my dreams</div>
+<h1>There is a picture<br>behind everything.</h1>
+<p>Sometimes you see me working, planning, learning, trying to become better.</p>
+<p>But I wish you could see the picture behind all of it.</p>
+<p>I imagine a future where you don't have to wonder whether I am serious about us. Where my actions have answered every question.</p>
+<p>A future where we look back at these early days and smile because we kept believing, kept growing and kept trusting Allah.</p>
+<div class="line"></div>
+<h2 class="gold">I am building with tomorrow in my heart.</h2>
+<button class="next" onclick="go(4)">LET'S VISIT THAT TOMORROW ✧</button>
+</section>
+
+<section class="scene" id="s4">
+<div class="k">Chapter four · The little life I dream about</div>
+<div class="house"><div class="roof"></div><div class="walls"><div class="win"></div><div class="win two"></div><div class="door"></div></div></div>
+<h1>A home.<br>Not just a house.</h1>
+<p>Imagine Fajr together. A peaceful home. You cooking, me joining you in the kitchen. Little jokes, random laughter, and meals that somehow taste better because we're sharing them.</p>
+<p>Prayers before plans. Forgiveness after misunderstandings. Supporting each other's dreams. Growing older without growing distant.</p>
+<p class="gold">A home where Allah is remembered and love is felt.</p>
+<button class="next" onclick="go(5)">ONE THING I PROMISE ✧</button>
+</section>
+
+<section class="scene" id="s5">
+<div class="k">Chapter five · My promise</div>
+<div class="flower">♡</div>
+<h1>I choose to keep<br>showing up.</h1>
+<p>I cannot promise that every day will be easy.</p>
+<p>But I can promise to keep learning how to love you better. To communicate. To listen. To apologise when I'm wrong. To support you and to never treat your heart carelessly.</p>
+<p>I will keep working towards the life we dream about. I will never stop loving you, and I will never give up on us.</p>
+<div class="line"></div>
+<p class="gold">Not just in words. In the way I live.</p>
+<button class="next" onclick="go(6)">LET US MAKE A DUA ✧</button>
+</section>
+
+<section class="scene" id="s6">
+<div class="k">Chapter six · What I ask Allah for</div>
+<div class="glow"></div>
+<h1>Ya Allah...</h1>
+<p>If this love is good for our dunya and akhirah, bless it, protect it and allow it to grow in a way that pleases You.</p>
+<p>Make our Nikkah easy and beautiful. Remove the obstacles from our path. Grant us a home filled with sakinah, rahmah and barakah.</p>
+<p>Make us garments for one another. Help us be patient in difficulty, grateful in ease, gentle in disagreement and faithful in every season.</p>
+<p>Let our love bring us closer to You, never further away.</p>
+<h2 class="gold">Ameen ya Rabb. 🤲</h2>
+<button class="next" onclick="go(7)">YOUR FINAL LETTER 💌</button>
+</section>
+
+<section class="scene" id="s7">
+<div class="k">The last page · Never the last chapter</div>
+<div id="letter">
+<h2>To my Sarauniya,</h2>
+<p>My love, if there is one thing I want you to take away from this little experience, it is this: you matter to me more than I can ever fit into a screen.</p>
+<p>I see you. I see your effort, your heart, your dreams, your imperfections and your beautiful ways. I don't only love the happy moments. I want to be someone who stands beside you through the ordinary days too.</p>
+<p>When I think about my future, I don't imagine success as something I enjoy alone. I imagine us celebrating the little victories, making dua when things are difficult, and thanking Allah when He makes a way.</p>
+<p>I pray that the day we make our Nikkah, we remember these days with grateful hearts. May Allah make everything smooth for us, and may the life ahead be even more beautiful than the one we've imagined.</p>
+<p>Thank you for being you. Thank you for loving me. And thank you for giving my heart another reason to look forward to tomorrow.</p>
+<p class="sig">With all the love in my heart,<br><b>Muhammad.</b></p>
+</div>
+<h2 class="gold">My Queen. My Hayati. 💗</h2>
+<p class="muted">The story continues, Insha'Allah.</p>
+<button class="next" onclick="go(0)">READ IT AGAIN ♡</button>
+</section>
+
+<script>
+const sky=document.getElementById('sky');
+for(let i=0;i<100;i++){
+ const a=document.createElement('i');
+ a.className='star';
+ a.style.left=Math.random()*100+'%';
+ a.style.top=Math.random()*100+'%';
+ a.style.animationDelay=Math.random()*4+'s';
+ a.style.opacity=.2+Math.random()*.8;
+ sky.appendChild(a);
+}
+function go(n){
+ document.querySelectorAll('.scene').forEach(s=>s.classList.remove('active'));
+ const target=document.getElementById('s'+n);
+ target.classList.add('active');
+ target.scrollTop=0;
+ document.getElementById('progress').textContent=
+ 'A STORY WRITTEN WITH LOVE · '+String(n+1).padStart(2,'0')+' / 08';
+}
+</script>
+</body>
+</html>
